@@ -85,7 +85,10 @@ Activation function | Relu | Relu | Sigmoid |
 To determine the optimal threshold for my model, I plotted an ROC curve with an area under curve (AUC) of 0.963. 
 ![ROC-base](https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/bad-roc.png)
 
-![Confusion Matrix Base Model](https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/cm-15epoch-transfer.png)
+#![Confusion Matrix Base Model](https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/cm-15epoch-transfer.#png)
+<p align="center">
+  <img width="560" height="350" src="https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/cm-15epoch-transfer.png">
+</p>
 
 Looking at the confusion matrix, the model is better at detecting pneumonia cases than normal cases. There are a high number of normal cases being misclassfied (False Positives). In a medical setting, False Positives typically only lead to additional testing for confirmation but a False Negative could lead to a doctor overlooking something dangerous or even deadly. This could have a detrimental impact on the patient health. Therefore, I selected Recall as the metric to evaluate my model performance. The recall value refers to the proportion of positive cases identified out of total positive cases. 
 
