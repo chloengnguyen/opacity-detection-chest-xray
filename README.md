@@ -85,16 +85,18 @@ Activation function | Relu | Relu | Sigmoid |
 To determine the optimal threshold for my model, I plotted an ROC curve with an area under curve (AUC) of 0.963. 
 ![ROC-base](https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/bad-roc.png)
 
-#![Confusion Matrix Base Model](https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/cm-15epoch-transfer.#png)
+
 <p align="center">
-  <img width="560" height="350" src="https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/cm-15epoch-transfer.png">
+  <img width="560" height="450" src="https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/cm-15epoch-transfer.png">
 </p>
 
 Looking at the confusion matrix, the model is better at detecting pneumonia cases than normal cases. There are a high number of normal cases being misclassfied (False Positives). In a medical setting, False Positives typically only lead to additional testing for confirmation but a False Negative could lead to a doctor overlooking something dangerous or even deadly. This could have a detrimental impact on the patient health. Therefore, I selected Recall as the metric to evaluate my model performance. The recall value refers to the proportion of positive cases identified out of total positive cases. 
 
 I compared the results of my model with the model using DenseNet. After adjusting the threshold, the transfer learning model seems to do worse at capturing the positive cases even though the False Positive cases is slightly reduced. 
 
-![Confusion-matrix-tf](https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/confusion-matrix-tf-avg.png)
+<p align="center">
+  <img width="560" height="450" src="https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/confusion-matrix-tf-avg.png">
+</p>
 
 I decided to dig a little deeper and looked at some of my model's predictions. The second X-ray on the first row is being misclassified as a Pneumonia case with a rather high probability. By comparing it with the other normal cases, the X-ray image looks a bit more fuzzy than normal. This could be a result of under-exposure which lowers the quality of the image, and my model is not able to recognize this. It's also possible that my model has a very narrow view of what a normal chest X-ray looks like as the normal class is underrepresented. 
 
