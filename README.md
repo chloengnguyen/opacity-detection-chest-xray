@@ -95,7 +95,7 @@ Looking at the confusion matrix, the model is better at detecting pneumonia case
 I compared the results of my model with the model using DenseNet. After adjusting the threshold, the transfer learning model seems to do worse at capturing the positive cases even though the False Positive cases is slightly reduced. 
 
 <p align="center">
-  <img width="560" height="450" src="https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/confusion-matrix-tf-avg.png">
+  <img src="https://github.com/chloengnguyen/opacity-detection-chest-xray/blob/master/graph/confusion-matrix-tf-avg.png">
 </p>
 
 I decided to dig a little deeper and looked at some of my model's predictions. The second X-ray on the first row is being misclassified as a Pneumonia case with a rather high probability. By comparing it with the other normal cases, the X-ray image looks a bit more fuzzy than normal. This could be a result of under-exposure which lowers the quality of the image, and my model is not able to recognize this. It's also possible that my model has a very narrow view of what a normal chest X-ray looks like as the normal class is underrepresented. 
